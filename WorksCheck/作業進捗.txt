@@ -1,0 +1,14 @@
+①原因不明の大バグ。View系列ではinit...()に問題がないがusercontrolでなぜか実行されない。←これは治った。
++名前空間が存在しないとなる。ポイントUsercontrol意外にもviewmodelも同様のケースに。←これも治った。
+②Comboboxでbindingを行うと初期値が崩れることがある
+
+
+対処法一覧
+①プロジェクトファイルを開きobjとbinを削除した後開いてみてinit...()がハイライトされていたらチャンス。リビルドを通して全体を直す。
+②Selectedindexのbindingをxaml上で後ろにすれば解決
+
+ルール
+使うDatetime
+00:00:00->DayRack
+
+次回にやってほしいこと->isachieveの実装方法

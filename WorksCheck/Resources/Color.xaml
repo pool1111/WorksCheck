@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="AppmainColor" Color="#FFFF5353"/>
+    <SolidColorBrush x:Key="WindowColor" Color="#FDFDFD"/>
+    <SolidColorBrush x:Key="SubjectBoxColor" Color="#FFBFBFBF"/>
+    <SolidColorBrush x:Key="TextColor" Color="#FF464646"/>
+    <SolidColorBrush x:Key="OppositeColor" Color="#FFF7F7F7"/>
+    
+    <!--datecolor-->
+    <SolidColorBrush x:Key="SundayColor" Color="#FFFB4F4F"/>
+    <SolidColorBrush x:Key="SaturdayColor" Color="#FF3232FD"/>
+
+    <!--control color-->
+    <SolidColorBrush x:Key="MouseOverColor" Color="Black" Opacity="0.1"/>
+    <SolidColorBrush x:Key="PressedColor" Color="Black" Opacity="0.2"/>
+    <SolidColorBrush x:Key="TextBackground" Color="#FFEDEDED"/>
+    <SolidColorBrush x:Key="TextCaretColor" Color="#FFFF5353"/>
+    <SolidColorBrush x:Key="TextSelectionColor" Color="#FFFF5353" Opacity="0.5"/>
+    <SolidColorBrush x:Key="TextBorderNoFocusColor" Color="#FFC7C7C7"/>
+    <SolidColorBrush x:Key="TextBorderIsFocusColor" Color="#FFFF5353"/>
+    <SolidColorBrush x:Key="ComboboxTriangleColor" Color="#444444"/>
+    <SolidColorBrush x:Key="ComboboxBorderNoFocusColor" Color="#FFC7C7C7"/>
+    <SolidColorBrush x:Key="ComboboxBorderIsFocusColor" Color="#FFFF5353"/>
+    <SolidColorBrush x:Key="ComboboxItemMouseOverColor" Color="#FFFF5353" Opacity="0.2"/>
+    <SolidColorBrush x:Key="CheckRectBackgroundColor" Color="#FDFDFD"/>
+    <SolidColorBrush x:Key="CheckRectBorderColor" Color="#FFC7C7C7"/>
+    <SolidColorBrush x:Key="CheckNullBackgroundAndBorderColor" Color="Black"/>
+    <SolidColorBrush x:Key="CheckBoxEnableFalseBackgroundColor" Color="Black"/>
+    <SolidColorBrush x:Key="CheckBoxEnableFalseBorderColor" Color="Gray"/>
+    <SolidColorBrush x:Key="ToggleSwitchEllipseToggleStroke" Color="White"/>
+    <SolidColorBrush x:Key="ToggleSwitchTrackBackgroundOnColor" Color="#FFFF5353"/>
+    <SolidColorBrush x:Key="ToggleSwitchTrackBackgroundOffColor" Color="#FFC7C7C7"/>
+    <SolidColorBrush x:Key="HomeworkDataContainerIsAchieve" Color="#FFE6E6E6"/>
+    <SolidColorBrush x:Key="DropDownBackgroundColor" Color="#FDFDFD"/>
+    <SolidColorBrush x:Key="DropDownBorderColor" Color="#FFFF5353"/>
+
+    <!--subject color-->
+    <SolidColorBrush x:Key="JapaneseColor" Color="#FFFF9888"/>
+    <SolidColorBrush x:Key="MathColor" Color="#FFA0E5FF"/>
+    <SolidColorBrush x:Key="EnglishColor" Color="#FFC470"/>
+    <SolidColorBrush x:Key="SocialColor" Color="#FFC2F9A4"/>
+    <SolidColorBrush x:Key="ScienceColor" Color="#FFFDADFD"/>
+    <SolidColorBrush x:Key="SubColor" Color="#FFFFD4B5"/>
+</ResourceDictionary>

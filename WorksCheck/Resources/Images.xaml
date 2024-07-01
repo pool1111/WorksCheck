@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="Delete" UriSource="/Resources/Images/細いバツのアイコン.png"/>
+    <BitmapImage x:Key="PriorityHigh" UriSource="/Resources/Images/arrow-up.png"/>
+    <BitmapImage x:Key="PriorityNormal" UriSource="/Resources/Images/arrows-horizontal.png"/>
+    <BitmapImage x:Key="PriorityLow" UriSource="/Resources/Images/arrow-down.png"/>
+</ResourceDictionary>

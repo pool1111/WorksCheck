@@ -1,0 +1,96 @@
+﻿<Window x:Class="WorksCheck.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ViewModel="clr-namespace:WorksCheck.ViewModels"
+        xmlns:UC="clr-namespace:WorksCheck.Resources.UserControls"
+        xmlns:gwd="urn:gong-wpf-dragdrop"
+        mc:Ignorable="d"
+        Title="WorksCheck" Height="720" Width="1280" MinWidth="659" MinHeight="720" Background="{StaticResource WindowColor}">
+
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid x:Name="SubjectBox"  Margin="0,20,10,20" HorizontalAlignment="Right" Width="240">
+            <Border Background="Transparent" BorderBrush="{StaticResource SubjectBoxColor}" BorderThickness="1"/>
+            <TextBlock Text="教科ボックス" VerticalAlignment="Top" TextAlignment="Center" FontSize="24" Margin="0,10,0,0" FontFamily="{StaticResource NotoSansJP-Medium}" Foreground="{StaticResource TextColor}"/>
+            <ListBox Margin="1,60,1,0" ItemsSource="{Binding Subjectlists}" ItemContainerStyle="{StaticResource CustomListBoxItem}" Height="223" VerticalAlignment="Top" gwd:DragDrop.IsDragSource="True" gwd:DragDrop.UseDefaultDragAdorner="True" BorderBrush="{StaticResource SubjectBoxColor}" BorderThickness="0,0,0,1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding SubjectName}" VerticalAlignment="Center" Foreground="{StaticResource TextColor}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <Button x:Name="Show" Content="Show" Margin="0,303,0,0" Click="Show_Click" Height="29" VerticalAlignment="Top" Visibility="Hidden"/>
+            <Button x:Name="Delete" Content="Delete" Margin="0,332,0,0" Click="Delete_Click" Height="29" VerticalAlignment="Top" Visibility="Hidden"/>
+
+        </Grid>
+        <Grid MinWidth="700" Margin="280,20,260,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Text="予定表" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="{StaticResource NotoSansJP-Bold}"/>
+                <Border Grid.Row="0"  BorderThickness="0,0,0,1" BorderBrush="{StaticResource AppmainColor}"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+                <Button Width="30" HorizontalAlignment="Right" Margin="1" Command="{Binding OneweekAhead}">
+                    <Button.ToolTip>
+                        <ToolTip Content="1週間進む"/>
+                    </Button.ToolTip>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="Transparent" BorderBrush="Transparent" CornerRadius="4">
+                                <TextBlock Foreground="{StaticResource TextColor}" Text="↑" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Noto Sans JP Light"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{StaticResource MouseOverColor}"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{StaticResource PressedColor}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Width="30" HorizontalAlignment="Right" Margin="1" Command="{Binding OneweekAgo}">
+                    <Button.ToolTip>
+                        <ToolTip Content="1週間戻る"/>
+                    </Button.ToolTip>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="Transparent" CornerRadius="4">
+                                <TextBlock Foreground="{StaticResource TextColor}" Text="↓" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{StaticResource MouseOverColor}"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="{StaticResource PressedColor}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <UniformGrid x:Name="MainCalendar" Grid.Row="2" Columns="4" Rows="2">
+                <UC:DayRack Date="{Binding DateLists[0]}"/>
+                <UC:DayRack Date="{Binding DateLists[1]}"/>
+                <UC:DayRack Date="{Binding DateLists[2]}"/>
+                <UC:DayRack Date="{Binding DateLists[3]}"/>
+                <UC:DayRack Date="{Binding DateLists[4]}"/>
+                <UC:DayRack Date="{Binding DateLists[5]}"/>
+                <UC:DayRack Date="{Binding DateLists[6]}"/>
+            </UniformGrid>
+        </Grid>
+    </Grid>
+</Window>

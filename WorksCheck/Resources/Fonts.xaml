@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <FontFamily x:Key="NotoSansJP-Light">
+        /WorksCheck;component/Resources/Fonts/NotoSansJP-Light.ttf#Noto Sans JP Light
+    </FontFamily>
+    <FontFamily x:Key="NotoSansJP-Regular">
+        /WorksCheck;component/Resources/Fonts/NotoSansJP-Regular.ttf#Noto Sans JP Regular
+    </FontFamily>
+    <FontFamily x:Key="NotoSansJP-Medium">
+        /WorksCheck;component/Resources/Fonts/NotoSansJP-Medium.ttf#Noto Sans JP Medium
+    </FontFamily>
+    <FontFamily x:Key="NotoSansJP-Bold">
+        /WorksCheck;component/Resources/Fonts/NotoSansJP-Bold.ttf#Noto Sans JP Bold
+    </FontFamily>
+</ResourceDictionary>

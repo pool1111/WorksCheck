@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="WorksCheck.Resources.UserControls.DayRack"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WorksCheck.Resources.UserControls"
+             xmlns:vm ="clr-namespace:WorksCheck.ViewModels"
+             xmlns:gwd="urn:gong-wpf-dragdrop"
+             xml:lang="ja-JP"
+             mc:Ignorable="d" 
+             d:DesignHeight="340" d:DesignWidth="160" gwd:DragDrop.IsDropTarget="True" gwd:DragDrop.DropHandler="{Binding DayRackCustomDropHandler}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="{StaticResource WindowColor}" CornerRadius="4" Grid.RowSpan="4">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="10"/>
+            </Border.Effect>
+        </Border>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" x:Name="DayText" Foreground="{StaticResource TextColor}" VerticalAlignment="Center" TextAlignment="Center" FontSize="22" FontFamily="{StaticResource NotoSansJP-Bold}"/>
+            <TextBlock Grid.Column="2" x:Name="DateText" VerticalAlignment="Center" FontSize="13" FontFamily="{StaticResource NotoSansJP-Regular}"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="HomeworkDataPanel" Grid.Row="1" Orientation="Vertical"/>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2">
+            <TextBlock x:Name="TodayText" Text="TODAY" TextAlignment="Center" FontFamily="{StaticResource NotoSansJP-Bold}" Foreground="{StaticResource AppmainColor}" Visibility="Hidden" IsHitTestVisible="False" FontSize="40" Opacity="0.5" HorizontalAlignment="Center" Width="140" Height="50" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Separator BorderBrush="{StaticResource SubjectBoxColor}" BorderThickness="0,1,0,0" Grid.Row="3" Margin="10,0,10,49"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="合計数" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+
+            <TextBlock x:Name="SumData" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</UserControl>
