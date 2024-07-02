@@ -27,6 +27,8 @@ namespace WorksCheck.Resources.UserControls
         public HomeworkDataContainer()
         {
             InitializeComponent();
+            HomeworkData a = new();
+            a.Subject = SubjectData.CallG;
         }
 
         public static readonly DependencyProperty ShowHomeworkDataProperty = DependencyProperty.Register(
